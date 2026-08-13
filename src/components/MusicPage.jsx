@@ -120,7 +120,7 @@ export default function MusicPage() {
 
           {/* Song Info */}
           <div className="text-center mb-6">
-            <h3 className="font-display text-2xl text-slate-700 font-bold mb-1">17 Hoo Hoo</h3>
+            <h3 className="font-display text-2xl text-slate-700 font-bold mb-1">17</h3>
             <p className="font-body text-sm text-slate-400 font-light">Dept</p>
           </div>
 
