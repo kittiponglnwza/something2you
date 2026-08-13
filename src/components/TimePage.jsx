@@ -141,10 +141,10 @@ export default function TimePage() {
           
           <div className="font-body text-slate-600 text-[0.75rem] sm:text-[0.85rem] leading-[1.8] space-y-4 font-light relative z-10 overflow-y-auto pr-2 custom-scrollbar">
              <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.2s both' : 'none' }}>
-               ไม่รู้ว่าเราจะเดินไปด้วยกันได้นานแค่ไหน แต่ตอนนี้เรารู้สึกว่าทุกวันที่มีเธออยู่มันก็ดีมาก ๆ เลยนะ
+               ไม่รู้ว่าเราจะเดินไปด้วยกันได้นานแค่ไหน แต่ตอนนี้เรารู้สึกว่าทุกวันที่มีเธออยู่มันก็ดีมาก ๆ เลยนะะ
              </p>
              <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.3s both' : 'none' }}>
-               เราชอบเวลาที่ได้เล่นเกมด้วยกัน ชอบเวลาที่ได้คุยกัน ถึงบางทีจะคุยกันเรื่องไร้สาระไปเรื่อย 555 แต่มันก็เป็นช่วงเวลาที่เรามีความสุขดี
+               เราชอบเวลาที่ได้เล่นเกมด้วยกัน ชอบเวลาที่ได้คุยกัน ถึงบางทีจะกวนตีนไปบ้าง 55634555 แต่มันก็เป็นช่วงเวลาที่เรามีความสุขดี
              </p>
              <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.4s both' : 'none' }}>
                ถึงเราสองคนจะยังไม่เคยเจอกันจริง ๆ แต่เราก็รู้สึกชอบในตัวตนของเธอที่เราได้รู้จักผ่านการคุยกันและเล่นเกมด้วยกันนะ
@@ -156,7 +156,7 @@ export default function TimePage() {
                ขอบคุณที่เข้ามาเป็นส่วนหนึ่งในชีวิตเรานะ หวังว่าเราจะได้เล่นเกมด้วยกัน ได้คุยกัน และได้มีช่วงเวลาแบบนี้ไปอีกเรื่อย ๆ
              </p>
              <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.7s both' : 'none' }}>
-               ส่วนความรู้สึกที่เรามีตอนนี้ เราก็อยาก keep มันไว้แบบนี้ไปนาน ๆ เลย
+               ส่วนความรู้สึกที่เรามีตอนนี้ เราก็อยาก keep มันไว้แบบนี้ไปนาน ๆ เลยยยยย
              </p>
              <p className="font-medium text-rose-500 pt-2 text-right text-sm sm:text-base italic" style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.8s both' : 'none' }}>
                สุขสันต์วันเกิดนะ 🤍
