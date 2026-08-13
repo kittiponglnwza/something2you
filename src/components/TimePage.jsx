@@ -54,33 +54,44 @@ export default function TimePage() {
       <div className="absolute bottom-24 left-10 w-44 h-44 bg-violet-200/15 rounded-full blur-3xl pointer-events-none" />
 
       {/* Mobile Toggle Button */}
-      <button 
-        onClick={() => setMobileView(mobileView === 'time' ? 'letter' : 'time')}
-        className="lg:hidden absolute top-24 right-4 z-50 bg-white/60 backdrop-blur-md border border-pink-100 text-rose-500 px-4 py-1.5 rounded-full text-xs font-body shadow-sm active:scale-95 transition-transform"
-      >
-        {mobileView === 'time' ? 'อ่านจดหมาย 💌' : 'ดูเวลา ⏱️'}
-      </button>
+      <div className="lg:hidden absolute bottom-32 left-0 right-0 flex justify-center z-50 pointer-events-none">
+        <button 
+          onClick={() => setMobileView(mobileView === 'time' ? 'letter' : 'time')}
+          className="pointer-events-auto bg-white/90 backdrop-blur-xl border border-pink-100 text-rose-500 px-6 py-2.5 rounded-full text-sm font-body font-medium shadow-[0_8px_30px_rgb(225,29,72,0.15)] active:scale-95 transition-all flex items-center gap-2 hover:bg-rose-50"
+          style={{ animation: 'slide-up 0.5s 1s ease-out both' }}
+        >
+          {mobileView === 'time' ? 'อ่านจดหมาย 💌' : 'ย้อนกลับไปดูเวลา ⏱️'}
+        </button>
+      </div>
 
       {/* LEFT SIDE: TIME COUNTER */}
       <div 
-        className={`flex-col items-center flex-1 w-full lg:max-w-2xl z-10 shrink-0 lg:flex ${mobileView === 'time' ? 'flex' : 'hidden'}`}
+        className={`flex-col items-center justify-center flex-1 w-full lg:max-w-2xl z-10 shrink-0 lg:flex ${mobileView === 'time' ? 'flex' : 'hidden'}`}
         style={{ animation: mobileView === 'time' ? 'bounce-in 0.6s ease-out both' : 'none' }}
       >
-        <h2
-          className="font-display text-3xl sm:text-4xl lg:text-5xl text-slate-700 mb-1"
-          style={{ animation: 'slide-up 0.5s ease-out' }}
-        >
-          Time with you
-        </h2>
-        <p
-          className="text-[0.65rem] sm:text-xs text-rose-400 font-body mb-6 sm:mb-8 tracking-widest uppercase"
-          style={{ animation: 'slide-up 0.5s 0.1s ease-out both' }}
-        >
-          Since June 3, 2026
-        </p>
+        <div className="mt-[-8vh] lg:mt-0 flex flex-col items-center">
+          <h2
+            className="font-display text-3xl sm:text-4xl lg:text-5xl text-slate-700 mb-1"
+            style={{ animation: 'slide-up 0.5s ease-out' }}
+          >
+            Time with you
+          </h2>
+          <p
+            className="text-[0.65rem] sm:text-xs text-rose-400 font-body mb-8 sm:mb-10 tracking-widest uppercase"
+            style={{ animation: 'slide-up 0.5s 0.1s ease-out both' }}
+          >
+            Since June 3, 2026
+          </p>
+        </div>
 
-        {/* TIME UNITS CONTAINER - Scrollable on mobile if needed */}
-        <div className="flex flex-row justify-start sm:justify-center items-stretch gap-2 sm:gap-3 md:gap-4 w-full max-w-[95vw] mb-6 sm:mb-8 overflow-x-auto pb-4 snap-x px-2 custom-scrollbar">
+        {/* TIME UNITS CONTAINER */}
+        <div 
+          className="flex flex-row justify-start sm:justify-center items-stretch gap-2 sm:gap-3 md:gap-4 w-full max-w-[95vw] mb-8 sm:mb-10 overflow-x-auto pb-4 snap-x px-2"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          <style>{`
+            .overflow-x-auto::-webkit-scrollbar { display: none; }
+          `}</style>
           {units.map((u, i) => (
             <div
               key={u.l}
