@@ -21,11 +21,20 @@ export default function TimePage() {
   }, [])
 
   const [t, setT] = useState(calc)
+  const [mobileView, setMobileView] = useState('time')
 
   useEffect(() => {
     const id = setInterval(() => setT(calc()), 1000)
     return () => clearInterval(id)
   }, [calc])
+
+  // Sequence for mobile: switch to letter after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMobileView('letter')
+    }, 5000)
+    return () => clearTimeout(timer)
+  }, [])
 
   // Minimalist units
   const units = [
@@ -44,8 +53,19 @@ export default function TimePage() {
       <div className="absolute top-12 right-1/4 w-36 h-36 bg-pink-200/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-24 left-10 w-44 h-44 bg-violet-200/15 rounded-full blur-3xl pointer-events-none" />
 
+      {/* Mobile Toggle Button */}
+      <button 
+        onClick={() => setMobileView(mobileView === 'time' ? 'letter' : 'time')}
+        className="lg:hidden absolute top-24 right-4 z-50 bg-white/60 backdrop-blur-md border border-pink-100 text-rose-500 px-4 py-1.5 rounded-full text-xs font-body shadow-sm active:scale-95 transition-transform"
+      >
+        {mobileView === 'time' ? 'อ่านจดหมาย 💌' : 'ดูเวลา ⏱️'}
+      </button>
+
       {/* LEFT SIDE: TIME COUNTER */}
-      <div className="flex flex-col items-center flex-1 w-full lg:max-w-2xl z-10 shrink-0">
+      <div 
+        className={`flex-col items-center flex-1 w-full lg:max-w-2xl z-10 shrink-0 lg:flex ${mobileView === 'time' ? 'flex' : 'hidden'}`}
+        style={{ animation: mobileView === 'time' ? 'bounce-in 0.6s ease-out both' : 'none' }}
+      >
         <h2
           className="font-display text-3xl sm:text-4xl lg:text-5xl text-slate-700 mb-1"
           style={{ animation: 'slide-up 0.5s ease-out' }}
@@ -60,7 +80,7 @@ export default function TimePage() {
         </p>
 
         {/* TIME UNITS CONTAINER - Scrollable on mobile if needed */}
-        <div className="flex flex-row justify-start sm:justify-center items-stretch gap-2 sm:gap-3 md:gap-4 w-full max-w-[95vw] mb-6 sm:mb-8 overflow-x-auto pb-4 snap-x px-2 scrollbar-hide">
+        <div className="flex flex-row justify-start sm:justify-center items-stretch gap-2 sm:gap-3 md:gap-4 w-full max-w-[95vw] mb-6 sm:mb-8 overflow-x-auto pb-4 snap-x px-2 custom-scrollbar">
           {units.map((u, i) => (
             <div
               key={u.l}
@@ -91,8 +111,8 @@ export default function TimePage() {
 
       {/* RIGHT SIDE: LETTER CONTAINER WITH FLOWERS */}
       <div 
-        className="flex-1 w-full max-w-[90vw] sm:max-w-md lg:max-w-lg z-10 relative mt-4 lg:mt-0" 
-        style={{ animation: 'slide-up 0.8s 0.8s ease-out both' }}
+        className={`flex-1 w-full max-w-[90vw] sm:max-w-md lg:max-w-lg z-10 relative mt-8 lg:mt-0 lg:block ${mobileView === 'letter' ? 'block' : 'hidden'}`} 
+        style={{ animation: mobileView === 'letter' ? 'bounce-in 0.8s ease-out both' : 'none' }}
       >
         {/* Decorative Flower SVG (Minimalist style) */}
         <div className="absolute -top-10 -right-4 sm:-right-8 w-20 h-20 sm:w-24 sm:h-24 text-pink-300/40 rotate-12 z-0 pointer-events-none">
@@ -106,29 +126,29 @@ export default function TimePage() {
           </svg>
         </div>
 
-        <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-[0_8px_30px_rgb(225,29,72,0.08)] border border-pink-100 text-left relative overflow-hidden group hover:shadow-[0_15px_40px_rgb(225,29,72,0.12)] transition-shadow duration-500 z-10 flex flex-col max-h-[60vh] lg:max-h-[70vh]">
+        <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-[0_8px_30px_rgb(225,29,72,0.08)] border border-pink-100 text-left relative overflow-hidden group hover:shadow-[0_15px_40px_rgb(225,29,72,0.12)] transition-shadow duration-500 z-10 flex flex-col max-h-[65vh] lg:max-h-[70vh]">
           
           <h3 className="font-display text-2xl sm:text-3xl text-slate-700 mb-4 sm:mb-5 border-b border-rose-100/50 pb-3 relative z-10 italic shrink-0">
             ถึงเธอ...
           </h3>
           
           <div className="font-body text-slate-600 text-[0.75rem] sm:text-[0.85rem] leading-[1.8] space-y-4 font-light relative z-10 overflow-y-auto pr-2 custom-scrollbar">
-             <p style={{ animation: 'bounce-in 0.5s 1.0s both' }}>
+             <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.2s both' : 'none' }}>
                ไม่รู้ว่าเราจะเดินไปด้วยกันได้นานแค่ไหน แต่ในทุกวันที่มีเธออยู่ เรามีความสุขจริง ๆ
              </p>
-             <p style={{ animation: 'bounce-in 0.5s 1.1s both' }}>
-               ตั้งแต่วันที่เราได้รู้จักกัน จนถึงวันนี้ เวลาผ่านไปเร็วมากเลยนะ โดยเฉพาะช่วงเวลาที่เราได้เล่นเกมด้วยกัน บางครั้งมันอาจเป็นแค่การเล่นเกมธรรมดา ๆ สำหรับใครบางคน แต่สำหรับเรา มันกลายเป็นช่วงเวลาที่เรารอคอยและมีความสุขทุกครั้งที่ได้เล่นด้วยกัน ได้คุยกัน ได้หัวเราะด้วยกัน หรือแม้แต่ตอนที่เราเล่นพลาดแล้วต้องมานั่งบ่นกันเอง55454545545
+             <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.3s both' : 'none' }}>
+               ตั้งแต่วันที่เราได้รู้จักกัน จนถึงวันนี้ เวลาผ่านไปเร็วมากเลยนะ โดยเฉพาะช่วงเวลาที่เราได้เล่นเกมด้วยกัน บางครั้งมันอาจเป็นแค่การเล่นเกมธรรมดา ๆ สำหรับใครบางคน แต่สำหรับเรา มันกลายเป็นช่วงเวลาที่เรารอคอยและมีความสุขทุกครั้งที่ได้เล่นด้วยกัน ได้คุยกัน ได้หัวเราะด้วยกัน หรือแม้แต่ตอนที่เราเล่นพลาดแล้วต้องมานั่งบ่นกันเอง 555
              </p>
-             <p style={{ animation: 'bounce-in 0.5s 1.2s both' }}>
+             <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.4s both' : 'none' }}>
                ถึงเราสองคนจะยังไม่เคยเจอกันในชีวิตจริง แต่แปลกดีที่เรากลับรู้สึกชอบในตัวตนของเธอได้มากขนาดนี้ ไม่ใช่เพราะหน้าตา หรือเพราะเราเคยอยู่ข้าง ๆ กัน แต่เป็นเพราะสิ่งที่เราได้รู้จักผ่านทุกบทสนทนา ทุกเกม และทุกช่วงเวลาที่มีเธออยู่
              </p>
-             <p style={{ animation: 'bounce-in 0.5s 1.3s both' }}>
+             <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.5s both' : 'none' }}>
                เราไม่รู้เหมือนกันว่าอนาคตของเราจะเป็นยังไง ไม่รู้ว่าเราจะได้อยู่ในชีวิตของกันและกันไปอีกนานแค่ไหน แต่สิ่งหนึ่งที่เรารู้แน่ ๆ คือ เราชอบความรู้สึกที่เกิดขึ้นตอนมีเธออยู่ตรงนี้
              </p>
-             <p style={{ animation: 'bounce-in 0.5s 1.4s both' }}>
+             <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.6s both' : 'none' }}>
                และถ้าเลือกได้ เราอยากเก็บความรู้สึกนี้เอาไว้ให้นานที่สุด อยากให้ทุกครั้งที่เราได้เล่นเกมด้วยกัน ได้คุยกัน หรือได้ใช้เวลาอยู่ด้วยกัน ยังเป็นช่วงเวลาที่ทำให้เรายิ้มได้เหมือนเดิม
              </p>
-             <p style={{ animation: 'bounce-in 0.5s 1.5s both' }}>
+             <p style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.7s both' : 'none' }}>
                วันนี้เป็นวันเกิดของเธอ เราเลยอยากขอให้ปีนี้เป็นปีที่ดีสำหรับเธอมาก ๆ ขอให้เธอได้เจอแต่เรื่องที่ทำให้มีความสุข ได้ทำในสิ่งที่ชอบ ได้อยู่กับคนที่ทำให้สบายใจ และไม่ว่าจะเจออะไร ก็ขอให้เธอผ่านมันไปได้เสมอ
              </p>
              <p style={{ animation: 'bounce-in 0.5s 1.6s both' }}>
