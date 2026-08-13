@@ -106,26 +106,39 @@ export default function TimePage() {
           </svg>
         </div>
 
-        <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-[0_8px_30px_rgb(225,29,72,0.08)] border border-pink-100 text-left relative overflow-hidden group hover:shadow-[0_15px_40px_rgb(225,29,72,0.12)] transition-shadow duration-500 z-10">
+        <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-[0_8px_30px_rgb(225,29,72,0.08)] border border-pink-100 text-left relative overflow-hidden group hover:shadow-[0_15px_40px_rgb(225,29,72,0.12)] transition-shadow duration-500 z-10 flex flex-col max-h-[60vh] lg:max-h-[70vh]">
           
-          <h3 className="font-display text-2xl sm:text-3xl text-slate-700 mb-4 sm:mb-5 border-b border-rose-100/50 pb-3 relative z-10 italic">
-            My feelings for you
+          <h3 className="font-display text-2xl sm:text-3xl text-slate-700 mb-4 sm:mb-5 border-b border-rose-100/50 pb-3 relative z-10 italic shrink-0">
+            ถึงเธอ...
           </h3>
           
-          <div className="font-body text-slate-500 text-[0.8rem] sm:text-sm md:text-base leading-[1.8] space-y-3 font-light relative z-10">
+          <div className="font-body text-slate-600 text-[0.75rem] sm:text-[0.85rem] leading-[1.8] space-y-4 font-light relative z-10 overflow-y-auto pr-2 custom-scrollbar">
+             <p style={{ animation: 'bounce-in 0.5s 1.0s both' }}>
+               ไม่รู้ว่าเราจะเดินไปด้วยกันได้นานแค่ไหน แต่ในทุกวันที่มีเธออยู่ เรามีความสุขจริง ๆ
+             </p>
+             <p style={{ animation: 'bounce-in 0.5s 1.1s both' }}>
+               ตั้งแต่วันที่เราได้รู้จักกัน จนถึงวันนี้ เวลาผ่านไปเร็วมากเลยนะ โดยเฉพาะช่วงเวลาที่เราได้เล่นเกมด้วยกัน บางครั้งมันอาจเป็นแค่การเล่นเกมธรรมดา ๆ สำหรับใครบางคน แต่สำหรับเรา มันกลายเป็นช่วงเวลาที่เรารอคอยและมีความสุขทุกครั้งที่ได้เล่นด้วยกัน ได้คุยกัน ได้หัวเราะด้วยกัน หรือแม้แต่ตอนที่เราเล่นพลาดแล้วต้องมานั่งบ่นกันเอง 555
+             </p>
              <p style={{ animation: 'bounce-in 0.5s 1.2s both' }}>
-               Time flies so fast since the day we met.
+               ถึงเราสองคนจะยังไม่เคยเจอกันในชีวิตจริง แต่แปลกดีที่เรากลับรู้สึกชอบในตัวตนของเธอได้มากขนาดนี้ ไม่ใช่เพราะหน้าตา หรือเพราะเราเคยอยู่ข้าง ๆ กัน แต่เป็นเพราะสิ่งที่เราได้รู้จักผ่านทุกบทสนทนา ทุกเกม และทุกช่วงเวลาที่มีเธออยู่
+             </p>
+             <p style={{ animation: 'bounce-in 0.5s 1.3s both' }}>
+               เราไม่รู้เหมือนกันว่าอนาคตของเราจะเป็นยังไง ไม่รู้ว่าเราจะได้อยู่ในชีวิตของกันและกันไปอีกนานแค่ไหน แต่สิ่งหนึ่งที่เรารู้แน่ ๆ คือ เราชอบความรู้สึกที่เกิดขึ้นตอนมีเธออยู่ตรงนี้
              </p>
              <p style={{ animation: 'bounce-in 0.5s 1.4s both' }}>
-               Every second added to this counter... <br className="hidden sm:block"/>
-               is another beautiful memory we share.
+               และถ้าเลือกได้ เราอยากเก็บความรู้สึกนี้เอาไว้ให้นานที่สุด อยากให้ทุกครั้งที่เราได้เล่นเกมด้วยกัน ได้คุยกัน หรือได้ใช้เวลาอยู่ด้วยกัน ยังเป็นช่วงเวลาที่ทำให้เรายิ้มได้เหมือนเดิม
+             </p>
+             <p style={{ animation: 'bounce-in 0.5s 1.5s both' }}>
+               วันนี้เป็นวันเกิดของเธอ เราเลยอยากขอให้ปีนี้เป็นปีที่ดีสำหรับเธอมาก ๆ ขอให้เธอได้เจอแต่เรื่องที่ทำให้มีความสุข ได้ทำในสิ่งที่ชอบ ได้อยู่กับคนที่ทำให้สบายใจ และไม่ว่าจะเจออะไร ก็ขอให้เธอผ่านมันไปได้เสมอ
              </p>
              <p style={{ animation: 'bounce-in 0.5s 1.6s both' }}>
-               Thank you for being the highlight of my days.<br className="hidden sm:block"/>
-               Let's keep counting these moments together.
+               ขอบคุณที่เข้ามาเป็นส่วนหนึ่งในช่วงเวลาที่ผ่านมานะ ขอบคุณสำหรับทุกเกม ทุกบทสนทนา ทุกเสียงหัวเราะ และทุกความทรงจำเล็ก ๆ ที่เราได้มีร่วมกัน
              </p>
-             <p className="font-medium text-rose-400 pt-3 text-right" style={{ animation: 'bounce-in 0.5s 1.8s both' }}>
-               With love
+             <p style={{ animation: 'bounce-in 0.5s 1.7s both' }}>
+               เราไม่รู้ว่าคำว่า “ตลอดไป” จะมีจริงไหม แต่ถ้าเป็นไปได้ เราอยากให้ความรู้สึกดี ๆ ที่เรามีต่อเธอ อยู่กับเราไปให้นานที่สุด
+             </p>
+             <p className="font-medium text-rose-500 pt-2 text-right text-sm sm:text-base italic" style={{ animation: 'bounce-in 0.5s 1.8s both' }}>
+               สุขสันต์วันเกิดนะ 🤍
              </p>
           </div>
         </div>
