@@ -49,10 +49,10 @@ export default function RevealPage({ onNext }) {
 
   // Brought the polaroids much closer to the center on mobile
   const photos = [
-    { id: 1, caption: 'คนเก่งของเค้า 💖', pos: 'top-[20%] left-[8%] sm:top-12 sm:left-12 lg:top-20 lg:left-32', rot: '-rotate-12', animDelay: '1.2s', floatDelay: '0s' },
-    { id: 2, caption: 'ยิ้มเยอะๆ นะ 🌻', pos: 'top-[26%] right-[4%] sm:top-10 sm:right-10 lg:top-16 lg:right-28', rot: 'rotate-12', animDelay: '1.4s', floatDelay: '1s' },
-    { id: 3, caption: 'น่ารักที่สุดเลย 💕', pos: 'bottom-[30%] left-[5%] sm:bottom-20 sm:left-16 lg:bottom-32 lg:left-40', rot: '-rotate-6', animDelay: '1.6s', floatDelay: '2s' },
-    { id: 4, caption: 'มีความสุขมากๆ น้า ✨', pos: 'bottom-[22%] right-[10%] sm:bottom-16 sm:right-12 lg:bottom-24 lg:right-32', rot: 'rotate-[15deg]', animDelay: '1.8s', floatDelay: '1.5s' },
+    { id: 1, caption: '😼', pos: 'top-[20%] left-[8%] sm:top-12 sm:left-12 lg:top-20 lg:left-32', rot: '-rotate-12', animDelay: '1.2s', floatDelay: '0s' },
+    { id: 2, caption: '🌻', pos: 'top-[26%] right-[4%] sm:top-10 sm:right-10 lg:top-16 lg:right-28', rot: 'rotate-12', animDelay: '1.4s', floatDelay: '1s' },
+    { id: 3, caption: '🐷', pos: 'bottom-[30%] left-[5%] sm:bottom-20 sm:left-16 lg:bottom-32 lg:left-40', rot: '-rotate-6', animDelay: '1.6s', floatDelay: '2s' },
+    { id: 4, caption: '✨', pos: 'bottom-[22%] right-[10%] sm:bottom-16 sm:right-12 lg:bottom-24 lg:right-32', rot: 'rotate-[15deg]', animDelay: '1.8s', floatDelay: '1.5s' },
     { id: 5, caption: '🤍', pos: 'hidden md:block top-1/2 -translate-y-1/2 left-8 lg:left-16', rot: '-rotate-3', animDelay: '2s', floatDelay: '0.5s' },
     { id: 6, caption: '🥰', pos: 'hidden md:block top-1/2 -translate-y-1/2 right-6 lg:right-16', rot: 'rotate-6', animDelay: '2.2s', floatDelay: '2.5s' },
   ]
