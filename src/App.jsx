@@ -54,9 +54,8 @@ export default function App() {
     const end = (e) => {
       const dx = sx - e.changedTouches[0].clientX
       const dy = sy - e.changedTouches[0].clientY
-      if (Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 40) {
-        dy > 0 ? next() : prev()
-      } else if (Math.abs(dx) > 40) {
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+        // Only trigger page change on horizontal swipe
         dx > 0 ? next() : prev()
       }
     }
