@@ -161,6 +161,12 @@ export default function TimePage() {
              <p className="font-medium text-rose-500 pt-2 text-right text-sm sm:text-base italic" style={{ animation: mobileView === 'letter' ? 'slide-up 0.5s 0.8s both' : 'none' }}>
                สุขสันต์วันเกิดนะ 🤍
              </p>
+            <p>
+
+            </p>
+            <p>
+              
+            </p>
           </div>
         </div>
       </div>
