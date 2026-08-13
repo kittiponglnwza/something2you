@@ -84,18 +84,14 @@ export default function TimePage() {
           </p>
         </div>
 
-        {/* TIME UNITS CONTAINER */}
+        {/* TIME UNITS CONTAINER - Wrapped elegantly instead of squished */}
         <div 
-          className="flex flex-row justify-start sm:justify-center items-stretch gap-2 sm:gap-3 md:gap-4 w-full max-w-[95vw] mb-8 sm:mb-10 overflow-x-auto pb-4 snap-x px-2"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="flex flex-wrap justify-center items-stretch gap-3 sm:gap-4 md:gap-5 w-full max-w-[90vw] sm:max-w-xl mb-8 sm:mb-10"
         >
-          <style>{`
-            .overflow-x-auto::-webkit-scrollbar { display: none; }
-          `}</style>
           {units.map((u, i) => (
             <div
               key={u.l}
-              className="group relative flex-1 min-w-[4rem] sm:min-w-[4.5rem] md:min-w-[5.5rem] bg-white/65 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 md:p-4 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:-translate-y-1.5 transition-all duration-300 snap-center flex flex-col justify-center"
+              className="group relative flex-none w-[4.5rem] sm:w-[5.5rem] md:w-[6.5rem] bg-white/65 backdrop-blur-md rounded-2xl p-3 sm:p-4 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-center"
               style={{ animation: `bounce-in 0.4s ${i * 0.08}s cubic-bezier(0.34,1.56,0.64,1) both` }}
             >
               <div className={`absolute top-0 left-2 right-2 h-[3px] rounded-b-full bg-gradient-to-r ${u.grad} opacity-50 group-hover:opacity-100 transition-opacity`} />
